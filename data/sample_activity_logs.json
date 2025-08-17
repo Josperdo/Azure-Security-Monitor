@@ -1,0 +1,18 @@
+{
+  "value": [
+    {
+      "eventTimestamp": "2025-08-10T12:00:00Z",
+      "operationName": {"value": "Microsoft.KeyVault/vaults/secrets/get/action"},
+      "category": {"value": "Administrative"},
+      "properties": {"status": "Succeeded", "caller": "alice@contoso.com"},
+      "resourceId": "/subscriptions/xxx/resourceGroups/rg/providers/Microsoft.KeyVault/vaults/kv"
+    },
+    {
+      "eventTimestamp": "2025-08-10T12:05:00Z",
+      "operationName": {"value": "Microsoft.Authorization/roleAssignments/write"},
+      "category": {"value": "Administrative"},
+      "properties": {"status": "Succeeded", "caller": "bob@contoso.com"},
+      "resourceId": "/subscriptions/xxx"
+    }
+  ]
+}
