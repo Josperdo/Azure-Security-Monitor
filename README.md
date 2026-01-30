@@ -10,6 +10,13 @@ Parses **Azure Activity Logs** and raises alerts for high-risk operations, start
 
 This is a small, reproducible demo that highlights Python scripting, basic detection logic, and clean repo hygiene—cloud edition.
 
+## 🛠️ Technologies Used
+- **Python 3.8+** - Core language with modern type hints
+- **pandas** - Data manipulation and CSV handling
+- **Azure SDK** - Azure Identity and Monitor Query libraries
+- **pytest** - Unit and integration testing
+- **GitHub Actions** - Automated CI/CD pipeline
+
 ---
 
 ## 🚀 Quick Start
@@ -75,6 +82,22 @@ Azure-Security-Monitor/
   - Microsoft.KeyVault/vaults/secrets/list/action
 - Flags successful access events as a visibility aid (expandable with allowlists).
 
+## ✨ Key Features & Highlights
+
+**For Interview Discussions:**
+- **Modular Architecture** - Separation of concerns with dedicated modules for parsing, rules, and alerts
+- **Type Safety** - Full type hints throughout codebase for maintainability
+- **Extensible Rule Engine** - Easy to add new detection rules by implementing simple Python functions
+- **Multiple Output Formats** - CSV for data analysis, Markdown for human-readable summaries
+- **CI/CD Integration** - Automated testing across multiple Python versions
+- **Cloud Security Focus** - Addresses real-world Azure security monitoring challenges
+
+**Design Decisions:**
+- Kept detection logic simple and readable over complex pattern matching
+- Used JSON input for easy integration with Azure exports and local testing
+- Normalized heterogeneous log formats to consistent internal schema
+- Included sample data for reproducibility without Azure credentials
+
 ## 📸 Example Output
 CLI:
 ```bash
@@ -83,4 +106,32 @@ $ python -m src.main --input data/sample_activity_logs.json
 [+] Wrote alerts.csv and SUMMARY.md
 ```
 Sample outputs are included in [data/sample_alerts.csv](data/sample_alerts.csv) and [data/sample_SUMMARY.md](data/sample_SUMMARY.md).
+
+## 🚀 Potential Enhancements
+
+This project demonstrates core security monitoring concepts. In a production environment, consider:
+
+**Scalability & Performance:**
+- Stream processing for real-time log ingestion (e.g., Azure Event Hubs)
+- Database backend for alert history and trend analysis
+- Parallel processing for large log volumes
+
+**Enhanced Detection:**
+- Machine learning for anomaly detection (unusual access patterns)
+- Contextual rules (time-of-day, geolocation, user baseline behavior)
+- Integration with threat intelligence feeds
+- False positive reduction through allowlisting and tuning
+
+**Operations & Integration:**
+- Webhook/email notifications for critical alerts
+- SIEM integration (Splunk, Sentinel, ELK)
+- Dashboard visualization (Grafana, PowerBI)
+- Alert deduplication and correlation
+- Automated response actions (e.g., disable compromised accounts)
+
+**Security Hardening:**
+- Managed identity authentication instead of credentials
+- Secrets management via Azure Key Vault
+- Input validation and sanitization
+- Audit logging of the monitor itself
 

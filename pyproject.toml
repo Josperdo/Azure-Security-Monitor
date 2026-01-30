@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "azure-security-monitor"
+version = "0.1.0"
+description = "Parse Azure Activity Logs and raise alerts for high-risk operations"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "John Sperry", email = "your.email@example.com"}
+]
+keywords = ["azure", "security", "monitoring", "cloud", "detection"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Security",
+    "Topic :: System :: Monitoring",
+]
+
+dependencies = [
+    "pandas>=2.0",
+    "azure-identity",
+    "azure-monitor-query",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+azure-security-monitor = "src.main:main"
+
+[project.urls]
+Homepage = "https://github.com/Josperdo/Azure-Security-Monitor"
+Repository = "https://github.com/Josperdo/Azure-Security-Monitor"
+Issues = "https://github.com/Josperdo/Azure-Security-Monitor/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]

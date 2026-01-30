@@ -1,9 +1,16 @@
+"""
+Azure Activity Log Parser.
+
+Loads and normalizes Azure Activity Logs from JSON exports into a consistent format
+for downstream rule evaluation.
+"""
 from __future__ import annotations
 from typing import List, Dict, Any
 import json
 
+
 def load_activity_logs(path: str) -> List[Dict[str, Any]]:
-    with open(path, "r", encoding="uft-8") as f:
+    with open(path, "r", encoding="utf-8") as f:
         raw = json.load(f)
     # Accept eitehr an object of "value" (Azure export) or a plain list
     if isinstance(raw, dict) and "value" in raw:

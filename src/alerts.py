@@ -1,4 +1,10 @@
+"""
+Alert output formatting and file generation.
+
+Handles writing detected alerts to CSV and Markdown summary files.
+"""
 from typing import List, Dict
+
 
 def write_alerts_csv(alerts: List[Dict], path: str = "alerts.csv") -> None:
     import csv

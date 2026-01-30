@@ -1,5 +1,12 @@
+"""
+Security detection rules for Azure Activity Logs.
+
+Contains rule functions that identify high-risk operations such as elevated
+RBAC assignments and Key Vault secret access.
+"""
 from __future__ import annotations
 from typing import List, Dict
+
 
 def rule_elevated_rbac_assignment(events: List[Dict]) -> List[Dict]:
     """Flag assignments of Owner/User Access Administrator roles."""
