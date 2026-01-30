@@ -10,7 +10,7 @@ Parses **Azure Activity Logs** and raises alerts for high-risk operations, start
 
 This is a small, reproducible demo that highlights Python scripting, basic detection logic, and clean repo hygiene—cloud edition.
 
-## 🛠️ Technologies Used
+## Technologies Used
 - **Python 3.8+** - Core language with modern type hints
 - **pandas** - Data manipulation and CSV handling
 - **Azure SDK** - Azure Identity and Monitor Query libraries
@@ -19,7 +19,7 @@ This is a small, reproducible demo that highlights Python scripting, basic detec
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 1) **Clone**
 ```bash
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 python -m src.main --input data/sample_activity_logs.json
 ```
 
-## 📂 Project Structure
+## Project Structure
 ```bash
 Azure-Security-Monitor/
 ├── src/
@@ -71,7 +71,7 @@ Azure-Security-Monitor/
 └── README.md
 ```
 
-## 🔍 Detections
+## Detections
 
 ### Elevated RBAC Assignment
 - Triggers on Microsoft.Authorization/roleAssignments/write.
@@ -82,7 +82,7 @@ Azure-Security-Monitor/
   - Microsoft.KeyVault/vaults/secrets/list/action
 - Flags successful access events as a visibility aid (expandable with allowlists).
 
-## ✨ Key Features & Highlights
+## Key Features & Highlights
 
 **For Interview Discussions:**
 - **Modular Architecture** - Separation of concerns with dedicated modules for parsing, rules, and alerts
@@ -98,7 +98,7 @@ Azure-Security-Monitor/
 - Normalized heterogeneous log formats to consistent internal schema
 - Included sample data for reproducibility without Azure credentials
 
-## 📸 Example Output
+## Example Output
 CLI:
 ```bash
 $ python -m src.main --input data/sample_activity_logs.json
@@ -107,7 +107,7 @@ $ python -m src.main --input data/sample_activity_logs.json
 ```
 Sample outputs are included in [data/sample_alerts.csv](data/sample_alerts.csv) and [data/sample_SUMMARY.md](data/sample_SUMMARY.md).
 
-## 🚀 Potential Enhancements
+## Potential Enhancements
 
 This project demonstrates core security monitoring concepts. In a production environment, consider:
 
