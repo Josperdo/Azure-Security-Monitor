@@ -1,0 +1,3 @@
+caller,resource,rule,time
+alice@contoso.com,/subscriptions/xxx/resourceGroups/rg/providers/Microsoft.KeyVault/vaults/kv,keyvault_secret_access,2025-08-10T12:00:00Z
+bob@contoso.com,/subscriptions/xxx,elevated_rbac_assignment,2025-08-10T12:05:00Z

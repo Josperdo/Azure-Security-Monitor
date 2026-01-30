@@ -1,5 +1,9 @@
 # Azure Security Monitor
 
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)
+
 Parses **Azure Activity Logs** and raises alerts for high-risk operations, starting with:
 - **Elevated RBAC assignments** (e.g., Owner / User Access Administrator)
 - **Key Vault secret access** operations (list/get)
@@ -51,7 +55,9 @@ Azure-Security-Monitor/
 │   ├── test_parser.py # Sample data parse test
 │   └── test_rules.py  # Rule sanity tests
 ├── data/
-│   └── sample_activity_logs.json
+│   ├── sample_activity_logs.json
+│   ├── sample_alerts.csv     # Example output
+│   └── sample_SUMMARY.md     # Example summary
 ├── requirements.txt
 ├── .gitignore
 ├── .github/workflows/ci.yml   # (Optional) CI for tests
@@ -76,10 +82,5 @@ $ python -m src.main --input data/sample_activity_logs.json
 [+] Events: 2  Alerts: 2
 [+] Wrote alerts.csv and SUMMARY.md
 ```
-alerts.csv (truncated):
-```bash
-rule,time,caller,resource
-keyvault_secret_access,2025-08-10T12:00:00Z,alice@contoso.com,/subscriptions/xxx/.../vaults/kv
-elevated_rbac_assignment,2025-08-10T12:05:00Z,bob@contoso.com,/subscriptions/xxx
-```
+Sample outputs are included in [data/sample_alerts.csv](data/sample_alerts.csv) and [data/sample_SUMMARY.md](data/sample_SUMMARY.md).
 
