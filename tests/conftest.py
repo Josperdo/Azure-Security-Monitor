@@ -1,6 +1,6 @@
-# Ensure src/ is importable for pytest & CI
+# Ensure project root is importable for pytest & CI
 import sys
 from pathlib import Path
-ROOT = Path(__file__).resolve().parents[1] / "src"
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
